@@ -190,28 +190,14 @@ public class PermissionHandler {
 ```
 ## Step 4: Here is `MainActivity.java` code: 
 ```java
-    // Declare Variable
-    Button button;
-    PermissionHandler mPermissionHandler;
+// Declare Variable
+Button button;
+PermissionHandler mPermissionHandler;
 ```
 ```java
-        // Initialize Variable
-        button = findViewById(R.id.button);
-        mPermissionHandler = new PermissionHandler(this);
-```
-```java
-        // Check Storage Permission when click a button
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check Storage Permission
-                if (mPermissionHandler.checkStoragePermission()) {
-                    Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
-                } else {
-                    mPermissionHandler.requestPermissions();
-                }
-            }
-        });
+// Initialize Variable
+button = findViewById(R.id.button);
+mPermissionHandler = new PermissionHandler(this);
 ```
 ```java
   // Write this below onCreate Bundle...
@@ -233,6 +219,20 @@ public class PermissionHandler {
             }
         }
     }
+```
+```java
+        // Check Storage Permission when click a button
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Check Storage Permission
+                if (mPermissionHandler.checkStoragePermission()) {
+                    Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    mPermissionHandler.requestPermissions();
+                }
+            }
+        });
 ```
 ## License
 
