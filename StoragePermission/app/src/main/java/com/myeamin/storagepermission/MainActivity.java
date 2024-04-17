@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Declare Variable
     Button button;
     PermissionHandler mPermissionHandler;
 
@@ -20,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize Variable
         button = findViewById(R.id.button);
         mPermissionHandler = new PermissionHandler(this);
 
+        // Check Storage Permission when click a button
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Check Storage Permission
                 if (mPermissionHandler.checkStoragePermission()) {
                     Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
                 } else {
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     } // onCreate Bundle end here...
 
+    // Write this below onCreate Bundle...
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if (!allPermissionsGranted) {
                 mPermissionHandler.showDialog(permissions, requestCode);
-            }else {
+            } else {
                 Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
             }
         }
