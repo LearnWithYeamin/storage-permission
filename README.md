@@ -214,8 +214,6 @@ mPermissionHandler = new PermissionHandler(this);
             }
             if (!allPermissionsGranted) {
                 mPermissionHandler.showDialog(permissions, requestCode);
-            }else {
-                Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
             }
         }
     }
