@@ -4,7 +4,7 @@
   </a> 
 <h1 align='center'>Request Runtime Storage Permissions</h1>
 <h3 align='center'>
-    <a href="https://www.youtube.com/watch?v=Sgkp46GS6rk">Watch Video</a> for Runtime Storage Permissions.  
+    <a href="https://www.youtube.com/@CodeCraftArena">Watch Video</a> for Runtime Storage Permissions on all Android version phones.  
 </h3>
 </p>
 
@@ -190,28 +190,14 @@ public class PermissionHandler {
 ```
 ## Step 4: Here is `MainActivity.java` code: 
 ```java
-    // Declare Variable
-    Button button;
-    PermissionHandler mPermissionHandler;
+// Declare Variable
+Button button;
+PermissionHandler mPermissionHandler;
 ```
 ```java
-        // Initialize Variable
-        button = findViewById(R.id.button);
-        mPermissionHandler = new PermissionHandler(this);
-```
-```java
-        // Check Storage Permission when click a button
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check Storage Permission
-                if (mPermissionHandler.checkStoragePermission()) {
-                    Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
-                } else {
-                    mPermissionHandler.requestPermissions();
-                }
-            }
-        });
+// Initialize Variable
+button = findViewById(R.id.button);
+mPermissionHandler = new PermissionHandler(this);
 ```
 ```java
   // Write this below onCreate Bundle...
@@ -228,11 +214,23 @@ public class PermissionHandler {
             }
             if (!allPermissionsGranted) {
                 mPermissionHandler.showDialog(permissions, requestCode);
-            }else {
-                Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
             }
         }
     }
+```
+```java
+        // Check Storage Permission when click a button
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Check Storage Permission
+                if (mPermissionHandler.checkStoragePermission()) {
+                    Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    mPermissionHandler.requestPermissions();
+                }
+            }
+        });
 ```
 ## License
 
