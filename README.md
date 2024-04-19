@@ -213,12 +213,8 @@ mPermissionHandler = new PermissionHandler(this);
         }
     }
 ```
-## License
-
-Distributed under the Apache License 2.0. See <a href="https://github.com/i-rin-eam/mone-tag/blob/main/LICENSE">LICENSE</a> for more information.
-
 ## Authors
 
-**MD YEAMIN** - *Android Software Developer* - <a href="https://github.com/i-rin-eam">MD YEAMIN</a> - *Learn with Ease*
+**MD YEAMIN** - Android Software Developer <a href="https://www.youtube.com/@LearnWithYeamin">**(Learn with Yeamin)**</a> 
 
 <h1 align="center">Thank You ❤️</h1>
