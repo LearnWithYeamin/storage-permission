@@ -26,7 +26,7 @@ Also add the following attribute to the `<application>` tag inside `AndroidManif
 ```
 <img src="https://raw.githubusercontent.com/i-rin-eam/storage-permission/main/images/android-manifest.png" alt="android-manifest-xml.jpeg">
 
-## Step 2: Create a Java Class (ex. `PermissionHandler.java`) and add below code.
+## Step 2: Create a Java class (e.g., PermissionHandler.java) and add the following code.
 ```java
 import android.Manifest;
 import android.app.Activity;
