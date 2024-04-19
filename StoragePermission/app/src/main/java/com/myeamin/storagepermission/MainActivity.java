@@ -1,5 +1,6 @@
 package com.myeamin.storagepermission;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Check Storage Permission
                 if (mPermissionHandler.checkStoragePermission()) {
-                    Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                    // Open image picker when permission is granted
+                    Intent intent = new Intent(Intent.ACTION_PICK);
+                    intent.setType("image/*");
+                    startActivityForResult(Intent.createChooser(intent, "Select Image"), 1);
                 } else {
                     mPermissionHandler.requestPermissions();
                 }
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     } // onCreate Bundle end here...
 
-    // Write this below onCreate Bundle...
+    // Write this code where onCreate Bundle is end...
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
