@@ -4,7 +4,7 @@
   </a> 
 <h1 align='center'>Request Runtime Storage Permissions</h1>
 <h3 align='center'>
-    <a href="https://www.youtube.com/@CodeCraftArena">Watch Video</a> for Runtime Storage Permissions on all Android version phones.  
+    <a href="https://www.youtube.com/@LearnWithYeamin">Watch the video</a> to learn how to manage runtime storage permissions on all android versions.
 </h3>
 </p>
 
