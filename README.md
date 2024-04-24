@@ -158,39 +158,15 @@ public class PermissionHandler {
     }
 }
 ```
-## Step 3: Here is `activity_main.xml` code: 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:text="Allow Permission"
-        android:textSize="25sp" />
-
-
-</LinearLayout>
-```
-## Step 4: Here is `MainActivity.java` code: 
+## Step 3: Here is `MainActivity.java` code: 
 ```java
-// Declare Variable
-Button button;
-PermissionHandler mPermissionHandler;
-```
-```java
-// Initialize Variable
-button = findViewById(R.id.button);
-mPermissionHandler = new PermissionHandler(this);
+                // Check Storage Permission Granted or not
+                if (mPermissionHandler.checkStoragePermission()) {
+                    // Show Toast when permission is granted
+                    Toast.makeText(MainActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    mPermissionHandler.requestPermissions();
+                }
 ```
 ```java
  // Write this code where onCreate Bundle is end...
